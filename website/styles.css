@@ -1,0 +1,297 @@
+/* 全体のスタイル */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #ffffff3a;
+}
+  
+/* ヘッダーのスタイル */
+header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 50vh; /* ヘッダーの高さを調整 */
+    z-index: 1;
+    width: 100%;
+}
+
+/* 洋服ショップのスタイル */
+.logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 15px;
+}
+
+.logo a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* ナビゲーションメニューのスタイル */
+nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px;
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.nav-menu li {
+    margin-left: 20px;
+}
+
+.nav-menu a {
+    color: #000000;
+    text-decoration: none;
+}
+
+/* ヘッダー画像のスタイル */
+.header-image {
+    position: relative;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    z-index: -1;
+}
+
+  /* スライダーのスタイル */
+  .slider-left {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* スライダー領域外に画像がはみ出ないようにする */
+    margin-top: 0px;
+  }
+  
+  .slider-left .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    margin-top: 20%;
+    margin-left: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .slider-left .slide.active {
+    opacity: 1;
+  }
+  
+  .slider-left .slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+  }
+  
+  /* 2カラムレイアウトのスタイル */
+  .slider-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  /* 左側のカラム（フルスクリーンスライダー）のスタイル */
+  .slider-left {
+    flex: 1; /* 2カラムの左側の幅を50%にする */
+    height: 100%;
+  }
+  
+  /* 右側のカラム（テキスト）のスタイル */
+  .text {
+    flex: 1; /* 2カラムの右側の幅を50%にする */
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 100px 180px ;
+    }
+    
+    /* フッターのスタイル */
+    footer {
+    background-color: #4a4a4a;
+    padding: 20px 0;
+}
+    
+.footer-content {
+    text-align: center;
+    color: #fff;
+}
+    
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    /* ヘッダーのスタイル */
+    header {
+        flex-wrap: wrap;
+    }
+    
+    .logo {
+        padding: 10px 0;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .nav-menu {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .nav-menu li {
+        margin: 0 10px;
+    }
+    
+    /* スライダーのスタイル */
+    .slider-left {
+        margin-top: 150px;
+    }
+    
+    .slider-left .slide-content {
+        bottom: 20%;
+        top: auto;
+    }
+}
+
+/* ニュース欄のスタイル */
+.news-section {
+  background-color: #ffffff;
+  padding: 30px 0;
+}
+
+.news-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+  padding-top: 400px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.news-container h2 {
+    text-align: center;
+}
+
+.news-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto; /* 追加 */
+    text-align: left; /* 追加 */
+    display: inline-block; /* 追加 */
+  }
+
+  .news-item {
+    margin-bottom: 10px; /* 追加 */
+  }
+  
+  .news-date {
+    font-weight: bold;
+    margin-right: 10px;
+    display: inline-block; /* 追加 */
+    vertical-align: top; /* 追加 */
+  }
+  
+  .news-title {
+    font-weight: normal;
+    display: inline-block; /* 追加 */
+    vertical-align: top; /* 追加 */
+  }
+  
+  .new-content-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 0;
+  }
+  
+  .content-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .left-column,
+  .right-column {
+    flex: 1;
+    padding: 0 0 0 200px;
+  }
+  
+  .right-column img {
+    width: 90%;
+    height: auto;
+    margin-right: 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s, transform 1s; /* ここを5sから1sに変更 */
+  }
+    
+  .right-column img.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .second-content-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 0;
+  }
+  
+  .second-content-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .second-left-column,
+  .second-right-column {
+    flex: 1;
+    padding: 0 0 0 90px;
+  }
+  
+  .second-left-column img {
+    width: 80%;
+    height: auto;
+  }
+  
+  .third-content-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 0;
+  }
+  
+  .third-content-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .third-left-column,
+  .third-right-column {
+    flex: 1;
+    padding: 0 0 0 200px;
+  }
+  
+  .third-right-column img {
+    width: 90%;
+    height: auto;
+  }
+  
